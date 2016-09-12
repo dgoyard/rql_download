@@ -732,7 +732,7 @@ class FuseRset(Operations):
 if __name__ == "__main__":
 
     # Setup the logger: cubicweb change the logging config and thus
-    # we setup en axtra stream handler
+    # we setup en extra stream handler
     # ToDo: fix it
     logger.setLevel(logging.DEBUG)
     logger.addHandler(logging.StreamHandler())

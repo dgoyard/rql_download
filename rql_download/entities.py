@@ -37,7 +37,7 @@ class BaseIDownloadAdapter(Action):
     .. note::
 
         * A 'rql' method has to be implemented in child classes.
-        * We assume the database intergrity (ie. all file pathes inserted in
+        * We assume the database integrity (ie. all file pathes inserted in
           the db exist on the file system) and thus do not check in the hooks
           to speed speed the search creation.
     """
@@ -86,7 +86,7 @@ class IFSetAdapter(BaseIDownloadAdapter):
         global_rql: str
             the adapted rql.
         nb_files: int
-            the number of files returned at the begining of the result set.
+            the number of files returned at the beginning of the result set.
         """
         # Define reserved labels
         reserved_labels = [
@@ -112,7 +112,6 @@ class IFSetAdapter(BaseIDownloadAdapter):
             "Any {0}, {1}, {2} external_files {3}, "
             "{3} filepath {0}".format(reserved_labels[0], formated_rql,
                                       parameter_name, reserved_labels[1]))
-
         return global_rql, 1
 
 
@@ -167,7 +166,7 @@ class IFileAdapter(BaseIDownloadAdapter):
                             'cannot edit the rql "{0}", "{1}" is a reserved key, '
                             'choose another name.'.format(rql, reserved_key))})
 
-        # Remove the begining of the rql in order to complete it
+        # Remove the beginning of the rql in order to complete it
         formated_rql = " ".join(rql.split()[1:])
 
         # Complete the rql in order to access file pathes
@@ -240,7 +239,7 @@ class IEntityFSetAdapter(BaseIDownloadAdapter):
                             'cannot edit the rql "{0}", "{1}" is a reserved key, '
                             'choose another name.'.format(rql, reserved_key))})
 
-        # Remove the begining of the rql in order to complete it
+        # Remove the beginning of the rql in order to complete it
         formated_rql = " ".join(rql.split()[1:])
 
         # Complete the rql in order to access file pathes:
